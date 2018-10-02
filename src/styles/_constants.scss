@@ -1,0 +1,17 @@
+/*Agrega colores por defecto de la app para ser exportados en los scss y seteados en la libreria de estilos por defecto
+  ya sea bulma, boostrap, etc.*/
+
+$first_color: #5E6878;
+$second_color: #BBC7D1;
+$third_color: #2E8DDB;
+$fourth_color: #EA0000;
+$fifth_color: #E9EBEE;
+
+/*variables de bulma*/
+
+$primary: $first_color;
+$link: $third_color;
+$info: $second_color;
+$success: $third_color;
+$warning: $second_color;
+$danger: $fourth_color;

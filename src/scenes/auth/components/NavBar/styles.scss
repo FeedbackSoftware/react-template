@@ -1,0 +1,64 @@
+.NavBar {
+  background-color: rgba(0, 0, 0, 0.4);
+  .navbar-brand {
+    //padding: 10px;
+  }
+  img.logo-freedom,
+  img.icon-freedom {
+    max-height: 2rem;
+  }
+  img.icon-freedom {
+    margin-right: 10px;
+  }
+
+  .navbar {
+    .navbar-end {
+      font-family: "Open Sans Regular";
+      font-size: 13.281472px;
+    }
+  }
+
+  @media screen and (max-width: 1087px) {
+    div#navbarMenu.navbar-menu {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .navbar-menu {
+      display: inherit;
+      padding: 0px;
+    }
+    .navbar-item {
+      display: flex;
+    }
+    span.span-icon-facebook {
+      padding-top: 5px;
+    }
+    .show-up-down {
+      -moz-transition-duration: 0.75s;
+      -webkit-transition-duration: 0.75s;
+      -o-transition-duration: 0.75s;
+      transition-duration: 0.75s;
+      -moz-transition-timing-function: ease-in;
+      -webkit-transition-timing-function: ease-in;
+      -o-transition-timing-function: ease-in;
+      transition-timing-function: ease-in;
+      max-height: 1000px;
+      overflow: hidden;
+    }
+    .hide-down-up {
+      overflow: hidden;
+      max-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      -moz-transition-duration: 0.75s;
+      -webkit-transition-duration: 0.75s;
+      -o-transition-duration: 0.75s;
+      transition-duration: 0.75s;
+      -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+      -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+      -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+      transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    }
+  }
+}

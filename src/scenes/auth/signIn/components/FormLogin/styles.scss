@@ -1,0 +1,19 @@
+.FormLogin {
+  font-family: "Open Sans";
+  .field {
+    margin-right: 10px;
+    .control.login-submit {
+      text-align: center;
+    }
+    .button.is-info.is-rounded {
+      width: 150px;
+    }
+  }
+  .button-submit {
+    margin-top: 10px;
+  }
+}
+
+.hero.is-info a:not(.button):not(.dropdown-item):not(.tag).blue-link {
+  color: #3273dc;
+}

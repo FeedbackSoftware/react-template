@@ -1,0 +1,38 @@
+.Profile {
+  .select:not(.is-multiple) {
+    height: auto;
+    min-height: 2.25em;
+  }
+  min-height: 456px;
+  form {
+    min-width: 60%;
+  }
+  @media screen and (max-width: 768px) {
+    form {
+      min-width: 100%;
+    }
+    min-height: 700px;
+  }
+  .react-datepicker-popper {
+    z-index: 5;
+  }
+  .ac-container {
+    position: absolute;
+    top: 100%;
+    background-color: white;
+    border: 1px solid #555555;
+    width: 100%;
+    z-index: 10;
+  }
+  .PlacesAutocomplete__autocomplete-container {
+    z-index: 50;
+  }
+}
+
+.react-datepicker-wrapper, .react-datepicker__input-container {
+  display: block !important;
+}
+
+.hero.is-info a:not(.button):not(.dropdown-item):not(.tag).blue-link {
+  color: #3273dc;
+}

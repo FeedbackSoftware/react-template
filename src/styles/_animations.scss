@@ -1,0 +1,182 @@
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin animation(
+  $delay,
+  $duration,
+  $animation,
+  $timing: linear,
+  $direction: forward,
+  $fillmode: forwards
+) {
+  -webkit-animation-delay: $delay;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-name: $animation;
+  -webkit-animation-timing-function: $timing;
+  -webkit-animation-fill-mode: $fillmode;
+  -webkit-animation-direction: $direction;
+
+  -moz-animation-delay: $delay;
+  -moz-animation-duration: $duration;
+  -moz-animation-name: $animation;
+  -moz-animation-timing-function: $timing;
+  -moz-animation-fill-mode: $fillmode;
+  -moz-animation-direction: $direction;
+
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-name: $animation;
+  animation-timing-function: $timing;
+  animation-fill-mode: $fillmode;
+  animation-direction: $direction;
+}
+
+.animation-slide-in-up {
+  @include animation(0, 0.75s, animation-slide-in-up, ease);
+}
+
+.animation-slide-in-down {
+  @include animation(0, 0.75s, animation-slide-in-down, ease);
+}
+
+.animation-slide-in-right {
+  @include animation(0, 0.75s, animation-slide-in-right, ease);
+}
+
+.animation-slide-in-left {
+  @include animation(0, 0.75s, animation-slide-in-left, ease);
+}
+
+.animation-slide-out-up {
+  @include animation(0, 0.75s, animation-slide-out-up, ease);
+}
+
+.animation-slide-out-down {
+  @include animation(0, 0.75s, animation-slide-out-down, ease);
+}
+
+.animation-slide-out-right {
+  @include animation(0, 0.75s, animation-slide-out-right, ease);
+}
+
+.animation-slide-out-left {
+  @include animation(0, 0.75s, animation-slide-out-left, ease);
+}
+
+// Fade-in
+@include keyframes(animation-fade) {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+// Slide
+
+// Slide Out Top from Center
+@include keyframes(animation-slide-out-up) {
+  0% {
+    @include transform(translate(0, 0));
+  }
+
+  100% {
+    @include transform(translate(0, -200%));
+  }
+}
+
+@include keyframes(animation-slide-out-down) {
+  0% {
+    @include transform(translate(0, 0));
+  }
+
+  100% {
+    @include transform(translate(0, 100%));
+  }
+}
+
+// Slide Out Left from Center
+@include keyframes(animation-slide-out-left) {
+  0% {
+    @include transform(translate(0, 0));
+  }
+
+  100% {
+    @include transform(translate(-200%, 0));
+  }
+}
+
+// Slide out Right from Center
+@include keyframes(animation-slide-out-right) {
+  0% {
+    @include transform(translate(0, 0));
+  }
+
+  100% {
+    @include transform(translate(100%, 0));
+  }
+}
+
+@include keyframes(animation-slide-in-up) {
+  0% {
+    @include transform(translate(0, 100%));
+  }
+
+  100% {
+    @include transform(translate(0, 0));
+  }
+}
+
+@include keyframes(animation-slide-in-down) {
+  0% {
+    @include transform(translate(0, -200%));
+  }
+
+  100% {
+    @include transform(translate(0, 0));
+  }
+}
+
+// Slide in Left to Center
+@include keyframes(animation-slide-in-left) {
+  0% {
+    @include transform(translate(-200%, 0));
+  }
+
+  100% {
+    @include transform(translate(0, 0));
+  }
+}
+
+// Slide in Right to Center
+@include keyframes(animation-slide-in-right) {
+  0% {
+    @include transform(translate(100%, 0));
+  }
+
+  100% {
+    @include transform(translate(0, 0));
+  }
+}
