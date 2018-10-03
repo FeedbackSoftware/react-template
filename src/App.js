@@ -2,7 +2,7 @@ import React             from 'react';
 import { Route, Switch } from 'react-router-dom';
 // import { BrowserRouter as Route, Switch } from 'react-router-dom';
 import ConnectedRouter   from 'react-router-redux';
-import PersistGate       from 'redux-persist/lib/integration/react';
+import { PersistGate }   from 'redux-persist/integration/react';
 import routes            from './config/routes';
 import { I18n }          from 'react-i18next';
 
