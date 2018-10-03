@@ -2,9 +2,8 @@ import React          from 'react';
 import './styles.css';
 import { WEBBASEURL } from '../../../../../config/env';
 
-const FormLogin = (childrens) => (
+const FormLogin = (props) => (
     <div className="FormLogin">
-    
     </div>
 );
 

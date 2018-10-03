@@ -1,6 +1,6 @@
 import { MAX_AGE } from '../config/constants';
 
-const evaluateAgeFromDateBirthDate = (date) => {
+const evaluateAgeFromDateBirthdate = (date) => {
   console.log(date);
   let fecha = date.format('YYYY-MM-DD')
   .split('-');
@@ -32,5 +32,5 @@ const evaluateAgeFromDateBirthDate = (date) => {
 };
 
 export {
-  evaluateAgeFromDateBirthDate
+  evaluateAgeFromDateBirthdate
 };

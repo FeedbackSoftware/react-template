@@ -8,14 +8,14 @@ import { ToastContainer }   from 'react-toastify';
 import FormLogin            from './components/FormLogin';
 
 class SignIn extends Component {
-  
+
   constructor(props) {
     super(props);
     this.state = {};
   }
-  
+
   render() {
-    const { auth: { loading }, t, childrens } = this.props;
+    const { auth: { loading }, t, props } = this.props;
     return (
         <div className="SignIn">
           <ToastContainer />
