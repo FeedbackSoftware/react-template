@@ -7,15 +7,7 @@ const NavBar = props => (
         <div className="container">
           <div className="navbar-brand">
             <div className="navbar-item">
-              { props.images.map((image, index) => (
-                  <img
-                      className="icon-freedom"
-                      key={ index }
-                      src={ image }
-                      alt="Icon freedom"
-                  />
-              )) }
-              { /*<h4 style={ { fontStyle: 'italic' } }>SOCIAL TECHNOLOGY</h4>*/ }
+              items
             </div>
             <span
                 className="navbar-burger burger"
@@ -32,7 +24,7 @@ const NavBar = props => (
               className="navbar-menu hide-down-up"
           >
             <div className="navbar-end">
-              { props.options.map(option => option) }
+              end
             </div>
           </div>
         </div>
