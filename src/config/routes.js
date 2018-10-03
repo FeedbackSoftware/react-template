@@ -15,14 +15,19 @@ const mapStateToProps = ({ auth: { logged, profile, user } }) => (
 );
 
 export const PrivateRoute = WrappedComponent => connect(mapStateToProps)(
-    ({ logged, ...rest }) => logged === true ? <WrappedComponent { ...rest } /> :
-        <Redirect to="/login" />);
+    ({ logged, ...rest }) => logged === true
+        ? <WrappedComponent { ...rest } />
+        : <Redirect to="/login" />);
 
 export const NotFound = () => (
     <Redirect to="/" />
 );
 
 const routes = [{
+  path: '/',
+  component: PrivateRoute(SignIn),
+  exact: true
+}, {
   path: '/login',
   component: SignIn,
   exact: true

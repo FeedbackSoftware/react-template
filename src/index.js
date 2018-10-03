@@ -4,7 +4,6 @@ import './styles/index.css';
 import App                from './App.js';
 import * as serviceWorker from './serviceWorker';
 import { Provider }       from 'react-redux';
-import createHistory      from 'history/createBrowserHistory';
 import configureStore     from './state/store';
 import configurei18n      from './i18n';
 
