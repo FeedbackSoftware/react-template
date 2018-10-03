@@ -1,21 +1,47 @@
-import axios  from 'axios';
-import VAR    from './env';
-import i_logo from '../resources/images/auth/feedback.png';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import { ENDPOINTS, ENV, API_VERSION } from './env'
 
+import logo from '../resources/images/auth/feedback.png';
 
-const STATE_VERSION = 0.1;  // Se usa para manejar una version, del estado de la aplicación,
-                            // cuando se cambia, setea el storage del cliente por el estado por defecto.
-const MAX_AGE = 18;
+// Se usa para manejar una version, del estado de la aplicación,
+// cuando se cambia, setea el storage del cliente por el estado por defecto.
+export const STATE_VERSION = 0.1;
 
-axios.defaults.baseURL = VAR.WEB_URL;
+// Constante para definir la edad minima del usuario para usar la app
+// export const MAX_AGE = 18;
 
-const IMG = {
-  logo: i_logo
+// Colores base de la aplicación
+export const COLORS = {}
+
+// Imagenes de toda la aplicacion separadas por categorias
+export const IMG = {
+  logo
 };
 
-export default {
-  ...VAR,
-  STATE_VERSION,
-  MAX_AGE,
-  IMG
+export const TOAST_CONFIGS = {
+  SUCCESS: {
+    type: toast.TYPE.SUCCESS,
+    autoClose: 10000,
+    position: toast.POSITION.TOP_CENTER
+  },
+  ERROR: {
+    type: toast.TYPE.ERROR,
+    autoClose: 10000,
+    position: toast.POSITION.TOP_CENTER
+  },
+  WARNING: {
+    type: toast.TYPE.WARNING,
+    autoClose: 10000,
+    position: toast.POSITION.TOP_CENTER
+  }
 };
+
+// Se genera la URL base de acuerdo a los endpoints del entorno
+// Opcionalmente se puede usar versionamiento de la API
+const { API } = ENDPOINTS;
+
+const API_URL = `${API[ENV]}/${API_VERSION}/`;
+
+// En dado caso que se use axios
+axios.defaults.baseURL = API_URL;
