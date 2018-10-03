@@ -1,11 +1,10 @@
 import {
   applyMiddleware, combineReducers, compose, createStore
-}                    from 'redux';
-import thunk         from 'redux-thunk';
-import logger        from 'redux-logger';
-import {
-  routerMiddleware
-}                    from 'react-router-redux';
+}                           from 'redux';
+import thunk                from 'redux-thunk';
+import logger               from 'redux-logger';
+import { routerMiddleware, connectRouter } from 'connected-react-router';
+
 import {
   persistReducer, persistStore
 }                    from 'redux-persist';
@@ -15,8 +14,9 @@ import {
   api, messages
 }                    from './middlewares';
 import STATE_VERSION from '../config/constants';
+import createHistory from 'history/createBrowserHistory';
 
-const configureStore = (history, initialState = {}) => {
+const configureStore = (initialState = {}) => {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
       || compose;
   
@@ -38,6 +38,8 @@ const configureStore = (history, initialState = {}) => {
   
   const persistedReducer = persistReducer(rootPersistConfig, rootReducer);
   
+  const history = createHistory();
+  
   const routerHistory = routerMiddleware(history);
   const middlewares = [thunk];
   
@@ -47,14 +49,15 @@ const configureStore = (history, initialState = {}) => {
   
   middlewares.push(...[routerHistory, ...api, ...messages]);
   
-  const store = createStore(persistedReducer, initialState,
+  const store = createStore(connectRouter(history)(persistedReducer), initialState,
       composeEnhancers(applyMiddleware(...middlewares)));
   
   const persistor = persistStore(store);
   
   return {
     store,
-    persistor
+    persistor,
+    history
   };
 };
 

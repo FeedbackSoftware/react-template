@@ -1,7 +1,7 @@
 import React              from 'react';
 import ReactDOM           from 'react-dom';
 import './styles/index.css';
-import App                from './App';
+import App                from './App.js';
 import * as serviceWorker from './serviceWorker';
 import { Provider }       from 'react-redux';
 import createHistory      from 'history/createBrowserHistory';
@@ -18,8 +18,7 @@ export const initialState = {
   }
 };
 
-const history = createHistory();
-const { store, persistor } = configureStore(history, initialState);
+const { store, persistor, history } = configureStore(initialState);
 
 
 ReactDOM.render(<Provider store={ store }>
@@ -27,7 +26,7 @@ ReactDOM.render(<Provider store={ store }>
       history={ history }
       persistor={ persistor }
   />
-</Provider>, document.getElementById('root'));
+</ Provider>, document.getElementById('root'));
 
 
 // If you want your app to work offline and load faster, you can change
