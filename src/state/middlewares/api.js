@@ -3,22 +3,23 @@ import { authTypes, authActions } from '../ducks/auth';
 
 const api = ({ dispatch, getState }) => (next) => (action) => {
   const types = [authTypes.API_CALL];
-  
+
   if (!types.includes(action.type)) {
     return next(action);
   }
-  
-  const { config: preConfig, authorization, onStart, onEnd, onComplete } = action.payload;
+
+  const { config: preConfig, authorization, onStart, onEnd, onComplete, onError } = action.payload;
   const { auth: { user } } = getState();
-  
+
   const config = authorization ? {
     ...preConfig,
     headers: {
       ...preConfig.headers,
+      // In this case we are using a bearer-token-based authentication
       Authorization: `Bearer ${user.access_token}`
     }
   } : preConfig;
-  
+
   onStart && dispatch(onStart());
   axios(config)
   .then((response) => {
@@ -40,6 +41,7 @@ const api = ({ dispatch, getState }) => (next) => (action) => {
       }
     }
     dispatch(authActions.endFetch(error));
+    onError && onError(error);
     onEnd && dispatch(onEnd(error));
   });
 };

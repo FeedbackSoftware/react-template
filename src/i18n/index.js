@@ -10,34 +10,30 @@ const configurei18n = (store) => {
   .use(reactI18nextModule)
   .on('languageChanged', (lng) => {
     store.subscribe(() => {
-      const state = store.getState();
-      if (state.auth.logged && lng.split('-')[0] !== state.auth.language) {
-        store.dispatch(authActions.setLanguage(lng.split('-')[0]));
+      const { auth } = store.getState();
+      const language = lng.split('-')[0];
+
+      if (auth.logged && language !== auth.language) {
+        store.dispatch(authActions.setLanguage({ language }));
       }
     });
   })
   .init({
     fallbackLng: 'en',
-    
     // have a common namespace used around the full app
     ns: ['translations'],
     defaultNS: 'translations',
-    
     debug: true,
-    
     interpolation: {
       escapeValue: false // not needed for react!!
     },
-    
     react: {
       wait: true
     },
-    
     resources: {
       en,
       es
     }
-    
   });
 };
 

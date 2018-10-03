@@ -15,11 +15,12 @@ import {
 }                    from './middlewares';
 import STATE_VERSION from '../config/constants';
 import createHistory from 'history/createBrowserHistory';
+import configurei18n from '../i18n'
 
 const configureStore = (initialState = {}) => {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
       || compose;
-  
+
   const rootPersistConfig = {
     key: 'root',
     storage,
@@ -31,29 +32,31 @@ const configureStore = (initialState = {}) => {
       return Promise.resolve(state);
     }
   };
-  
+
   const rootReducer = combineReducers({
     ...reducers
   });
-  
+
   const persistedReducer = persistReducer(rootPersistConfig, rootReducer);
-  
+
   const history = createHistory();
-  
+
   const routerHistory = routerMiddleware(history);
   const middlewares = [thunk];
-  
+
   if (process.env.NODE_ENV === 'development') {
     middlewares.push(logger);
   }
-  
+
   middlewares.push(...[routerHistory, ...api, ...messages]);
-  
+
   const store = createStore(connectRouter(history)(persistedReducer), initialState,
       composeEnhancers(applyMiddleware(...middlewares)));
-  
+
   const persistor = persistStore(store);
-  
+
+  configurei18n(store);
+
   return {
     store,
     persistor,

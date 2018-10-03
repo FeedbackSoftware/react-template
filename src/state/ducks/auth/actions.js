@@ -8,18 +8,16 @@ const updateProfile = createAction(types.UPDATE_PROFILE);
 const changeLanguage = createAction(types.CHANGE_LANGUAGE);
 const clear = createAction(types.CLEAR);
 
-const showMessage = createAction(types.MESSAGE, (message, config) => (
-    {
-      message
-    }
-), (message, config) => (
-    {
-      config
-    }
-));
+const showMessage = createAction(types.MESSAGE,
+  ({ message }) => ({
+    message
+  }),
+  ({ config }) => ({
+    config
+  }));
 
 
-const signIn = createAction(types.API_CALL, (data) => (
+const signIn = createAction(types.API_CALL, ({ data }) => (
     {
       config: {
         method: 'POST',
@@ -27,7 +25,7 @@ const signIn = createAction(types.API_CALL, (data) => (
         data: { ...data }
       },
       authorization: false,
-      onStart: () => startFetch({ loading: true }),
+      onStart: startFetch,
       onComplete: (dispatch, response) => {
         if (response.data.status === 'success') {
           alert('SUCCESS');
@@ -37,7 +35,7 @@ const signIn = createAction(types.API_CALL, (data) => (
     }
 ));
 
-const setLanguage = createAction(types.API_CALL, (language = 'en') => (
+const setLanguage = createAction(types.API_CALL, ({ language = 'en' }) => (
     {
       config: {
         method: 'POST',

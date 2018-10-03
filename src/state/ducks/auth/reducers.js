@@ -1,5 +1,5 @@
 import types            from './types';
-import { initialState } from '../../../index.js';
+import { initialState } from '../../../App';
 
 const auth = (state = {}, action) => {
   switch (action.type) {
@@ -31,10 +31,9 @@ const auth = (state = {}, action) => {
       };
     }
     case types.START_FETCH: {
-      const { payload: { loading } } = action;
       return {
         ...state,
-        loading: loading
+        loading: true
       };
     }
     case types.END_FETCH: {
