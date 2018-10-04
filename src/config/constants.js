@@ -1,6 +1,6 @@
-import axios from 'axios';
-import { toast } from 'react-toastify';
-import { ENDPOINTS, ENV, API_VERSION } from './env'
+import axios                           from 'axios';
+import { toast }                       from 'react-toastify';
+import { ENDPOINTS, ENV, API_VERSION } from './env';
 
 import logo from '../resources/images/auth/feedback.png';
 
@@ -12,14 +12,14 @@ export const STATE_VERSION = 0.1;
 // export const MAX_AGE = 18;
 
 // Colores base de la aplicación
-export const COLORS = {}
+export const COLORS = {};
 
 // Imagenes de toda la aplicacion separadas por categorias
 export const IMG = {
   logo
 };
 
-export const TOAST_CONFIGS = {
+export const TOAST_CONFIG = {
   SUCCESS: {
     type: toast.TYPE.SUCCESS,
     autoClose: 10000,

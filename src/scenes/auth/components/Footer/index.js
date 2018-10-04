@@ -4,7 +4,7 @@ const Footer = props => (
     <div className="container">
       <div className="tabs is-centered">
         <ul>
-          <li><a>Jonas González -- Software developer</a></li>
+          <li><a>Feedback -- Software Enterprise </a></li>
         </ul>
       </div>
     </div>

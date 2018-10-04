@@ -1,7 +1,7 @@
 import React       from 'react';
 import { connect } from 'react-redux';
 import {
-  SignIn, SignUp, ForgotPassword
+  SignIn, SignUp
 }                  from '../scenes';
 
 import { Redirect } from 'react-router-dom';
@@ -34,10 +34,6 @@ const routes = [{
 }, {
   path: '/sign-up',
   component: SignUp,
-  exact: true
-}, {
-  path: '/forgot-password',
-  component: ForgotPassword,
   exact: true
 }, {
   component: NotFound

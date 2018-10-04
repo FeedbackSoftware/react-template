@@ -1,6 +1,6 @@
-import React from 'react';
+import React   from 'react';
 import './styles.css';
-import IMG   from '../../../../config/constants';
+import { IMG } from '../../../../config/constants';
 
 const NavBar = props => (
     <div className="NavBar">

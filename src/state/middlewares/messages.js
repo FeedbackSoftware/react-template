@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify';
 import { authTypes } from '../ducks/auth';
-import { TOAST_CONFIGS } from '../../config/constants';
+import { TOAST_CONFIG } from '../../config/constants';
 
 const endFetch = ({ dispatch }) => (next) => (action) => {
   next(action);
@@ -20,7 +20,7 @@ const endFetch = ({ dispatch }) => (next) => (action) => {
         message: payload.message
       },
       meta: {
-        config: TOAST_CONFIGS.ERROR
+        config: TOAST_CONFIG.ERROR
       }
     });
   } else if (payload.status === 'error') {
@@ -30,7 +30,7 @@ const endFetch = ({ dispatch }) => (next) => (action) => {
         message: payload.message
       },
       meta: {
-        config: TOAST_CONFIGS.WARNING
+        config: TOAST_CONFIG.WARNING
       }
     });
   }
