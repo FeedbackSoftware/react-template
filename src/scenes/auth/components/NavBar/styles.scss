@@ -1,37 +1,14 @@
 .NavBar {
-  background-color: rgba(0, 0, 0, 0.4);
-  .navbar-brand {
-    //padding: 10px;
+  img {
+    padding: 5px;
   }
-  img.logo-freedom,
-  img.icon-freedom {
-    max-height: 2rem;
+  .navbar-item img {
+    max-height: 2.75rem;
   }
-  img.icon-freedom {
-    margin-right: 10px;
+  .navbar-menu {
+    display: block;
   }
-
-  .navbar {
-    .navbar-end {
-      font-family: "Open Sans Regular";
-      font-size: 13.281472px;
-    }
-  }
-
   @media screen and (max-width: 1087px) {
-    div#navbarMenu.navbar-menu {
-      background-color: rgba(0, 0, 0, 0.4);
-    }
-    .navbar-menu {
-      display: inherit;
-      padding: 0px;
-    }
-    .navbar-item {
-      display: flex;
-    }
-    span.span-icon-facebook {
-      padding-top: 5px;
-    }
     .show-up-down {
       -moz-transition-duration: 0.75s;
       -webkit-transition-duration: 0.75s;
