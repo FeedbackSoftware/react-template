@@ -53,7 +53,7 @@ class SignUp extends Component {
                     </h2>
                     <br />
                     <p className="has-text-centered">
-                      <a className="button is-medium is-info is-outlined">
+                      <a className="button is-medium is-primary is-outlined">
                         Learn more
                       </a>
                     </p>

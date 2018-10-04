@@ -8,12 +8,12 @@ import { ToastContainer }   from 'react-toastify';
 import FormLogin            from './components/FormLogin';
 
 class SignIn extends Component {
-
+  
   constructor(props) {
     super(props);
     this.state = {};
   }
-
+  
   render() {
     const { auth: { loading }, t, props } = this.props;
     return (
@@ -47,7 +47,7 @@ class SignIn extends Component {
                     </h2>
                     <br />
                     <p className="has-text-centered">
-                      <a className="button is-medium is-info is-outlined">
+                      <a className="button is-medium is-primary is-outlined">
                         Learn more
                       </a>
                     </p>
