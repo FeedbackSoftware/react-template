@@ -19,17 +19,18 @@ import App      from './App';
  }))
  */
 
-/*
+
 import configureStore from 'redux-mock-store'
+import { Provider }       from 'react-redux'
+
 const middlewares = []
 const mockStore = configureStore(middlewares)
 const initialState = {}
 const store = mockStore(initialState)
-import { Provider }       from 'react-redux';
 
 const { persistor, history } = configureStore(initialState);
-*/
-/*
+
+
  it('renders without crashing', () => {
  // const fn = jest.fn();
  const div = document.createElement('div');
@@ -41,20 +42,3 @@ const { persistor, history } = configureStore(initialState);
  </ Provider>, div);
  ReactDOM.unmountComponentAtNode(div);
  });
- */
-/*
-describe('Test', () => {
-
-    test('test', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(<Provider store={ store }>
-            <App
-                history={ history }
-                persistor={ persistor }
-            />
-        </ Provider>, div);
-        ReactDOM.unmountComponentAtNode(div);
-    })
-})
-    */
-
