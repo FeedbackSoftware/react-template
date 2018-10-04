@@ -1,15 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route, Switch }    from 'react-router-dom';
 import { ConnectedRouter }  from 'connected-react-router';
 import { PersistGate }      from 'redux-persist/integration/react';
 import routes               from './config/routes';
 import { I18n }             from 'react-i18next';
+import Provider             from 'react-redux/es/components/Provider'
+import configureStore       from './state/store'
 
-class App extends Component {
-  
-  render() {
-    const { persistor, history } = this.props;
+export const initialState = {
+  auth: {
+    logged: false,
+    language: '',
+    user: {},
+    profile: {},
+    loading: false
+  }
+};
+
+const App = () => {
+    const { store, persistor, history } = configureStore(initialState);
+
     return (
+      <Provider store={ store }>
         <PersistGate
             loading={ null }
             persistor={ persistor }
@@ -29,6 +41,7 @@ class App extends Component {
                                       ns="translations"
                                   >{ (t, { i18n }) => (
                                       <Component
+                                          {...props}
                                           history={ history }
                                           t={ t }
                                           i18n={ i18n }
@@ -43,8 +56,8 @@ class App extends Component {
             </div>
           </ ConnectedRouter>
         </ PersistGate>
+      </ Provider>
     );
-  }
-};
+  };
 
 export default App;
