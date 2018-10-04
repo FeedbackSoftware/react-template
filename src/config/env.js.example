@@ -8,14 +8,14 @@
  - local
  */
 
-const ENV = 'local';
+export const ENV = 'local';
 
 // Constante para definir la version de la API
-const API_VERSION = 'v1';
+export const API_VERSION = 'v1';
 
 // ENDPOINTS de la aplicacion en los diferentes entornos
 // Nota: las claves de este objeto deben coincidir con el (o los) valores de la constante ENV
-const ENDPOINTS = {
+export const ENDPOINTS = {
   API: {
     production: '',
     stage: '',
@@ -23,10 +23,4 @@ const ENDPOINTS = {
     dev: '',
     local: ''
   }
-};
-
-export default {
-  ENDPOINTS,
-  ENV,
-  API_VERSION
 };
