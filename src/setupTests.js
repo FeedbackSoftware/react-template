@@ -1,3 +1,4 @@
+/*
 jest.mock('redux', () => ({
     combineReducers: jest.fn(),
     applyMiddleware: jest.fn()
@@ -8,3 +9,12 @@ jest.mock('redux', () => ({
         Notification: 'fakeNotification',
     },
 }))
+*/
+
+const localStorageMock = {
+    getItem: () => jest.fn(),
+    setItem: jest.fn(),
+    clear: jest.fn()
+};
+
+global.localStorage = localStorageMock;
