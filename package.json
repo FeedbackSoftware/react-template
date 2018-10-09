@@ -30,7 +30,8 @@
     "test": "react-scripts test",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "debug": "node node_modules/.bin/react-scripts --inspect-brk test --env=jsdom --runInBand"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,5 +41,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "react-test-renderer": "^16.5.2",
+    "redux-mock-store": "^1.5.3"
+  }
 }

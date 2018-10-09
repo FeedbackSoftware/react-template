@@ -4,21 +4,9 @@ import { ConnectedRouter }  from 'connected-react-router';
 import { PersistGate }      from 'redux-persist/integration/react';
 import routes               from './config/routes';
 import { I18n }             from 'react-i18next';
-import Provider             from 'react-redux/es/components/Provider'
-import configureStore       from './state/store'
+import { Provider }         from 'react-redux'
 
-export const initialState = {
-  auth: {
-    logged: false,
-    language: '',
-    user: {},
-    profile: {},
-    loading: false
-  }
-};
-
-const App = () => {
-    const { store, persistor, history } = configureStore(initialState);
+const App = ({ store, persistor, history }) => {
 
     return (
       <Provider store={ store }>
