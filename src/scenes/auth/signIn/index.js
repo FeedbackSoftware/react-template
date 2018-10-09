@@ -5,7 +5,8 @@ import { Loading }          from '../../../components';
 import { NavBar, Footer }   from '../components';
 import './styles.css';
 import { ToastContainer }   from 'react-toastify';
-import FormLogin            from './components/FormLogin';
+import { TOAST_CONFIG }     from '../../../config/constants';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 class SignIn extends Component {
   
@@ -15,7 +16,7 @@ class SignIn extends Component {
   }
   
   render() {
-    const { auth: { loading }, t, props } = this.props;
+    const { auth: { loading }, showMessage } = this.props;
     return (
         <div className="SignIn">
           <ToastContainer />
@@ -47,9 +48,13 @@ class SignIn extends Component {
                     </h2>
                     <br />
                     <p className="has-text-centered">
-                      <a className="button is-medium is-primary is-outlined">
+                      <button
+                          className="button is-medium is-primary is-outlined"
+                          onClick={ () => showMessage('Nothing to show',
+                              TOAST_CONFIG.INFO) }
+                      >
                         Learn more
-                      </a>
+                      </button>
                     </p>
                   </div>
                 </div>

@@ -1,5 +1,6 @@
 import { createAction } from 'redux-actions';
 import types            from './types';
+import { TOAST_CONFIG } from '../../../config/constants';
 
 const startFetch = createAction(types.START_FETCH);
 const endFetch = createAction(types.END_FETCH);
@@ -8,13 +9,15 @@ const updateProfile = createAction(types.UPDATE_PROFILE);
 const changeLanguage = createAction(types.CHANGE_LANGUAGE);
 const clear = createAction(types.CLEAR);
 
-const showMessage = createAction(types.MESSAGE,
-  ({ message }) => ({
-    message
-  }),
-  ({ config }) => ({
-    config
-  }));
+export const showMessage = createAction(types.MESSAGE, (message, config) => (
+    {
+      message
+    }
+), (message, config) => (
+    {
+      config
+    }
+));
 
 
 const signIn = createAction(types.API_CALL, ({ data }) => (
@@ -28,7 +31,7 @@ const signIn = createAction(types.API_CALL, ({ data }) => (
       onStart: startFetch,
       onComplete: (dispatch, response) => {
         if (response.data.status === 'success') {
-          alert('SUCCESS');
+          dispatch(showMessage('SUCCESS', TOAST_CONFIG.WARNING));
         }
       },
       onEnd: endFetch

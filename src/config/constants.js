@@ -25,6 +25,11 @@ export const TOAST_CONFIG = {
     autoClose: 10000,
     position: toast.POSITION.TOP_CENTER
   },
+  INFO: {
+    type: toast.TYPE.INFO,
+    autoClose: 10000,
+    position: toast.POSITION.TOP_CENTER
+  },
   ERROR: {
     type: toast.TYPE.ERROR,
     autoClose: 10000,

@@ -36,10 +36,16 @@ const NavBar = props => (
             className="navbar-menu hide-down-up"
         >
           <div className="navbar-end">
-            <a className="navbar-item">
-              Home
+            <a
+                href="/sign-up"
+                className="navbar-item"
+            >
+              SignUp
             </a>
-            <a className="navbar-item is-hoverable">
+            <a
+                href={ '/login' }
+                className="navbar-item"
+            >
               <div className="navbar-link">
                 Documentation
               </div>

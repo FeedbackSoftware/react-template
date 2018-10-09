@@ -5,6 +5,7 @@ import { authActions }      from '../../../state/ducks/auth';
 import { NavBar, Footer }   from '../components';
 import './styles.css';
 import { ToastContainer }   from 'react-toastify';
+import { TOAST_CONFIG }     from '../../../config/constants';
 
 class SignUp extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class SignUp extends Component {
   };
   
   render() {
-    const { auth: { loading }, t } = this.props;
+    const { auth: { loading }, showMessage } = this.props;
     return (
         <div className="SignUp">
           <ToastContainer />
@@ -53,9 +54,13 @@ class SignUp extends Component {
                     </h2>
                     <br />
                     <p className="has-text-centered">
-                      <a className="button is-medium is-primary is-outlined">
+                      <button
+                          className="button is-medium is-primary is-outlined"
+                          onClick={ () => showMessage('Nothing to show',
+                              TOAST_CONFIG.WARNING) }
+                      >
                         Learn more
-                      </a>
+                      </button>
                     </p>
                   </div>
                 </div>
