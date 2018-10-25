@@ -9,12 +9,12 @@ import { TOAST_CONFIG }     from '../../../config/constants';
 import 'react-toastify/dist/ReactToastify.min.css';
 
 class SignIn extends Component {
-  
+
   constructor(props) {
     super(props);
     this.state = {};
   }
-  
+
   render() {
     const { auth: { loading }, showMessage } = this.props;
     return (
@@ -71,7 +71,7 @@ class SignIn extends Component {
 
 const mapStateToProps = ({ auth }) => (
     {
-      auth
+      auth,
     }
 );
 export default connect(mapStateToProps, { ...authActions })(SignIn);

@@ -1,14 +1,14 @@
-import React from 'react';
-import { Route, Switch }    from 'react-router-dom';
-import { ConnectedRouter }  from 'connected-react-router';
-import { PersistGate }      from 'redux-persist/integration/react';
-import routes               from './config/routes';
-import { I18n }             from 'react-i18next';
-import { Provider }         from 'react-redux'
+import React               from 'react';
+import { Route, Switch }   from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
+import { PersistGate }     from 'redux-persist/integration/react';
+import routes              from './config/routes';
+import { I18n }            from 'react-i18next';
+import { Provider }        from 'react-redux';
 
 const App = ({ store, persistor, history }) => {
 
-    return (
+  return (
       <Provider store={ store }>
         <PersistGate
             loading={ null }
@@ -29,7 +29,7 @@ const App = ({ store, persistor, history }) => {
                                       ns="translations"
                                   >{ (t, { i18n }) => (
                                       <Component
-                                          {...props}
+                                          { ...props }
                                           history={ history }
                                           t={ t }
                                           i18n={ i18n }
@@ -45,7 +45,7 @@ const App = ({ store, persistor, history }) => {
           </ ConnectedRouter>
         </ PersistGate>
       </ Provider>
-    );
-  };
+  );
+};
 
 export default App;

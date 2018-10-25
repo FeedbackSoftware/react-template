@@ -16,30 +16,30 @@ export const COLORS = {};
 
 // Imagenes de toda la aplicacion separadas por categorias
 export const IMG = {
-  logo
+  logo,
 };
 
 export const TOAST_CONFIG = {
   SUCCESS: {
     type: toast.TYPE.SUCCESS,
     autoClose: 10000,
-    position: toast.POSITION.TOP_CENTER
+    position: toast.POSITION.TOP_CENTER,
   },
   INFO: {
     type: toast.TYPE.INFO,
     autoClose: 10000,
-    position: toast.POSITION.TOP_CENTER
+    position: toast.POSITION.TOP_CENTER,
   },
   ERROR: {
     type: toast.TYPE.ERROR,
     autoClose: 10000,
-    position: toast.POSITION.TOP_CENTER
+    position: toast.POSITION.TOP_CENTER,
   },
   WARNING: {
     type: toast.TYPE.WARNING,
     autoClose: 10000,
-    position: toast.POSITION.TOP_CENTER
-  }
+    position: toast.POSITION.TOP_CENTER,
+  },
 };
 
 // Se genera la URL base de acuerdo a los endpoints del entorno

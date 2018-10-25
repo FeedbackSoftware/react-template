@@ -1,8 +1,8 @@
 const es = {
   translations: {
     'acceptTerms': 'Debe aceptar los términos y condiciones',
-    'addComment': 'Agregar comentario ...'
-  }
+    'addComment': 'Agregar comentario ...',
+  },
 };
 
 export default es;

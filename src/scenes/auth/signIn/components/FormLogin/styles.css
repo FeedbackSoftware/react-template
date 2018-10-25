@@ -1,13 +1,23 @@
 .FormLogin {
-  font-family: "Open Sans"; }
-  .FormLogin .field {
-    margin-right: 10px; }
-    .FormLogin .field .control.login-submit {
-      text-align: center; }
-    .FormLogin .field .button.is-info.is-rounded {
-      width: 150px; }
-  .FormLogin .button-submit {
-    margin-top: 10px; }
+    font-family: "Open Sans";
+}
+
+.FormLogin .field {
+    margin-right: 10px;
+}
+
+.FormLogin .field .control.login-submit {
+    text-align: center;
+}
+
+.FormLogin .field .button.is-info.is-rounded {
+    width: 150px;
+}
+
+.FormLogin .button-submit {
+    margin-top: 10px;
+}
 
 .hero.is-info a:not(.button):not(.dropdown-item):not(.tag).blue-link {
-  color: #3273dc; }
+    color: #3273dc;
+}

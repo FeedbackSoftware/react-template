@@ -1,11 +1,11 @@
 import types            from './types';
-import { initialState } from '../../../App';
+import { initialState } from '../../../index';
 
 const auth = (state = {}, action) => {
   switch (action.type) {
     case types.CLEAR: {
       return {
-        ...state, ...initialState.auth
+        ...state, ...initialState.auth,
       };
     }
     case types.UPDATE_PROFILE: {
@@ -15,8 +15,8 @@ const auth = (state = {}, action) => {
         profile: {
           ...state.profile, ...(
               payload !== null ? payload : {}
-          )
-        }
+          ),
+        },
       };
     }
     case types.UPDATE_USER: {
@@ -26,20 +26,20 @@ const auth = (state = {}, action) => {
         user: {
           ...state.user, ...(
               payload !== null ? payload : {}
-          )
-        }
+          ),
+        },
       };
     }
     case types.START_FETCH: {
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     }
     case types.END_FETCH: {
       return {
         ...state,
-        loading: false
+        loading: false,
       };
     }
     default:

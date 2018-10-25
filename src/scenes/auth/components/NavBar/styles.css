@@ -1,36 +1,43 @@
 .NavBar img {
-  padding: 5px; }
+    padding: 5px;
+}
 
 .NavBar .navbar-item img {
-  max-height: 2.75rem; }
+    max-height: 2.75rem;
+}
 
 .NavBar .navbar-menu {
-  display: block; }
+    display: block;
+}
 
 @media screen and (max-width: 1087px) {
-  .NavBar .show-up-down {
-    -moz-transition-duration: 0.75s;
-    -webkit-transition-duration: 0.75s;
-    -o-transition-duration: 0.75s;
-    transition-duration: 0.75s;
-    -moz-transition-timing-function: ease-in;
-    -webkit-transition-timing-function: ease-in;
-    -o-transition-timing-function: ease-in;
-    transition-timing-function: ease-in;
-    max-height: 1000px;
-    overflow: hidden; }
-  .NavBar .hide-down-up {
-    overflow: hidden;
-    max-height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    -moz-transition-duration: 0.75s;
-    -webkit-transition-duration: 0.75s;
-    -o-transition-duration: 0.75s;
-    transition-duration: 0.75s;
-    -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-    -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-    -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-    transition-timing-function: cubic-bezier(0, 1, 0.5, 1); } }
+    .NavBar .show-up-down {
+        -moz-transition-duration: 0.75s;
+        -webkit-transition-duration: 0.75s;
+        -o-transition-duration: 0.75s;
+        transition-duration: 0.75s;
+        -moz-transition-timing-function: ease-in;
+        -webkit-transition-timing-function: ease-in;
+        -o-transition-timing-function: ease-in;
+        transition-timing-function: ease-in;
+        max-height: 1000px;
+        overflow: hidden;
+    }
+
+    .NavBar .hide-down-up {
+        overflow: hidden;
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        -moz-transition-duration: 0.75s;
+        -webkit-transition-duration: 0.75s;
+        -o-transition-duration: 0.75s;
+        transition-duration: 0.75s;
+        -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+        -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+        -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+        transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    }
+}

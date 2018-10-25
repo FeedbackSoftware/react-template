@@ -11,21 +11,20 @@ const clear = createAction(types.CLEAR);
 
 export const showMessage = createAction(types.MESSAGE, (message, config) => (
     {
-      message
+      message,
     }
 ), (message, config) => (
     {
-      config
+      config,
     }
 ));
-
 
 const signIn = createAction(types.API_CALL, ({ data }) => (
     {
       config: {
         method: 'POST',
         url: `login/login-email`,
-        data: { ...data }
+        data: { ...data },
       },
       authorization: false,
       onStart: startFetch,
@@ -34,7 +33,7 @@ const signIn = createAction(types.API_CALL, ({ data }) => (
           dispatch(showMessage('SUCCESS', TOAST_CONFIG.WARNING));
         }
       },
-      onEnd: endFetch
+      onEnd: endFetch,
     }
 ));
 
@@ -44,13 +43,13 @@ const setLanguage = createAction(types.API_CALL, ({ language = 'en' }) => (
         method: 'POST',
         url: `profile/set-language`,
         data: {
-          language
-        }
+          language,
+        },
       },
       authorization: true,
       onComplete: (dispatch, response) => {
         dispatch(changeLanguage(language));
-      }
+      },
     }
 ));
 
@@ -62,5 +61,5 @@ export default {
   signIn,
   showMessage,
   setLanguage,
-  clear
+  clear,
 };

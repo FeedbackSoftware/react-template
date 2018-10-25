@@ -21,6 +21,6 @@ export const ENDPOINTS = {
     stage: '',
     qa: '',
     dev: '',
-    local: ''
-  }
+    local: '',
+  },
 };

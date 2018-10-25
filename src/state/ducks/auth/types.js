@@ -17,5 +17,5 @@ export default {
   API_CALL,
   CHANGE_LANGUAGE,
   MESSAGE,
-  CLEAR
+  CLEAR,
 };

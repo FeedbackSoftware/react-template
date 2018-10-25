@@ -12,15 +12,15 @@ class SignUp extends Component {
     super(props);
     this.state = {};
   }
-  
+
   componentDidMount() {
-  
+
   }
-  
+
   componentDidUpdate() {
-  
+
   };
-  
+
   render() {
     const { auth: { loading }, showMessage } = this.props;
     return (
@@ -73,12 +73,12 @@ class SignUp extends Component {
         </div>
     );
   }
-  
+
 }
 
 const mapStateToProps = ({ auth }) => (
     {
-      auth
+      auth,
     }
 );
 export default connect(mapStateToProps, { ...authActions })(SignUp);

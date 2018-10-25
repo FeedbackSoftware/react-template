@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "airbnb"
+  ],
+  "parser": "babel-eslint",
+  "rules": {
+    "react/button-has-type": "off",
+    "camelcase": "off",
+    "no-multi-spaces": "off",
+    "react/jsx-curly-spacing": "off",
+    "react/jsx-filename-extension": "off"
+  }
+}

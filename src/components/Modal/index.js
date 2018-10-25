@@ -13,7 +13,7 @@ const Modal = ({ children, isActive, handleToggle }) => (
             width: 'auto',
             left: 0,
             overflowY: 'scroll',
-            overflowX: 'hidden'
+            overflowX: 'hidden',
           } }
       >
         { children }

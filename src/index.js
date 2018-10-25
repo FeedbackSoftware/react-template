@@ -1,28 +1,27 @@
 import React              from 'react';
 import ReactDOM           from 'react-dom';
-import * as serviceWorker from './serviceWorker'
+import * as serviceWorker from './serviceWorker';
 
-import configureStore       from './state/store'
-import App                from './App.js';
+import configureStore from './state/store';
+import App            from './App.js';
 
 import './styles/index.css';
 
 export const initialState = {
-    auth: {
-        logged: false,
-        language: '',
-        user: {},
-        profile: {},
-        loading: false
-    }
+  auth: {
+    logged: false,
+    language: '',
+    user: {},
+    profile: {},
+    loading: false,
+  },
 };
 
-
 const Template = () => {
-    const params = configureStore(initialState);
+  const params = configureStore(initialState);
 
-    return <App {...params} />
-}
+  return <App { ...params } />;
+};
 
 ReactDOM.render(<Template />, document.getElementById('root'));
 

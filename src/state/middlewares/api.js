@@ -16,34 +16,34 @@ const api = ({ dispatch, getState }) => (next) => (action) => {
     headers: {
       ...preConfig.headers,
       // In this case we are using a bearer-token-based authentication
-      Authorization: `Bearer ${user.access_token}`
-    }
+      Authorization: `Bearer ${user.access_token}`,
+    },
   } : preConfig;
 
   onStart && dispatch(onStart());
   axios(config)
-  .then((response) => {
-    console.log(response);
-    const { status } = response;
-    if (status === 401) {
-      dispatch(authActions.clear());
-    }
-    onComplete && onComplete(dispatch, response);
-    onEnd && dispatch(onEnd(response));
-  })
-  .catch((error) => {
-    console.log(error);
-    const { response } = error;
-    if (response) {
-      const { status } = response;
-      if (status === 401) {
-        dispatch(authActions.clear());
-      }
-    }
-    dispatch(authActions.endFetch(error));
-    onError && onError(error);
-    onEnd && dispatch(onEnd(error));
-  });
+      .then((response) => {
+        console.log(response);
+        const { status } = response;
+        if (status === 401) {
+          dispatch(authActions.clear());
+        }
+        onComplete && onComplete(dispatch, response);
+        onEnd && dispatch(onEnd(response));
+      })
+      .catch((error) => {
+        console.log(error);
+        const { response } = error;
+        if (response) {
+          const { status } = response;
+          if (status === 401) {
+            dispatch(authActions.clear());
+          }
+        }
+        dispatch(authActions.endFetch(error));
+        onError && onError(error);
+        onEnd && dispatch(onEnd(error));
+      });
 };
 
 export default [api];

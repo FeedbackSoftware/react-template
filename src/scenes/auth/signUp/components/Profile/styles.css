@@ -1,29 +1,47 @@
 .Profile {
-  min-height: 456px; }
-  .Profile .select:not(.is-multiple) {
+    min-height: 456px;
+}
+
+.Profile .select:not(.is-multiple) {
     height: auto;
-    min-height: 2.25em; }
-  .Profile form {
-    min-width: 60%; }
-  @media screen and (max-width: 768px) {
+    min-height: 2.25em;
+}
+
+.Profile form {
+    min-width: 60%;
+}
+
+@media screen and (max-width: 768px) {
     .Profile {
-      min-height: 700px; }
-      .Profile form {
-        min-width: 100%; } }
-  .Profile .react-datepicker-popper {
-    z-index: 5; }
-  .Profile .ac-container {
+        min-height: 700px;
+    }
+
+    .Profile form {
+        min-width: 100%;
+    }
+}
+
+.Profile .react-datepicker-popper {
+    z-index: 5;
+}
+
+.Profile .ac-container {
     position: absolute;
     top: 100%;
     background-color: white;
     border: 1px solid #555555;
     width: 100%;
-    z-index: 10; }
-  .Profile .PlacesAutocomplete__autocomplete-container {
-    z-index: 50; }
+    z-index: 10;
+}
+
+.Profile .PlacesAutocomplete__autocomplete-container {
+    z-index: 50;
+}
 
 .react-datepicker-wrapper, .react-datepicker__input-container {
-  display: block !important; }
+    display: block !important;
+}
 
 .hero.is-info a:not(.button):not(.dropdown-item):not(.tag).blue-link {
-  color: #3273dc; }
+    color: #3273dc;
+}

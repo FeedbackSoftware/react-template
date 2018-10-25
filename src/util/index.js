@@ -3,7 +3,7 @@ import { MAX_AGE } from '../config/constants';
 const evaluateAgeFromDateBirthdate = (date) => {
   console.log(date);
   let fecha = date.format('YYYY-MM-DD')
-  .split('-');
+                  .split('-');
   let dia = fecha[2];
   let mes = fecha[1];
   let ano = fecha[0];
@@ -12,8 +12,8 @@ const evaluateAgeFromDateBirthdate = (date) => {
   let ahora_mes = fecha_hoy.getMonth() + 1;
   let ahora_dia = fecha_hoy.getDate();
   let edad = (
-      ahora_ano + 1900
-  ) - ano;
+                 ahora_ano + 1900
+             ) - ano;
   if (ahora_mes < mes) {
     edad--;
   }
@@ -32,5 +32,5 @@ const evaluateAgeFromDateBirthdate = (date) => {
 };
 
 export {
-  evaluateAgeFromDateBirthdate
+  evaluateAgeFromDateBirthdate,
 };
