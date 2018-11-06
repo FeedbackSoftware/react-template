@@ -1,11 +1,10 @@
-import React               from 'react';
-import { Route, Switch }   from 'react-router-dom';
-import { ConnectedRouter } from 'connected-react-router';
-import { PersistGate }     from 'redux-persist/integration/react';
-import routes              from './config/routes';
-import { I18n }            from 'react-i18next';
-import Provider            from 'react-redux/es/components/Provider';
-import configureStore      from './state/store';
+import React                          from 'react';
+import { Route, Switch }              from 'react-router-dom';
+import { ConnectedRouter }            from 'connected-react-router';
+import { PersistGate }                from 'redux-persist/integration/react';
+import routes, { RouteWithSubRoutes } from './config/routes';
+import Provider                       from 'react-redux/es/components/Provider';
+import configureStore                 from './state/store';
 
 export const initialState = {
   auth: {

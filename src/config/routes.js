@@ -4,7 +4,7 @@ import {
   SignIn, SignUp,
 }                  from '../scenes';
 
-import { Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 const mapStateToProps = ({ auth }) => ({
   auth,
@@ -15,14 +15,6 @@ export const privateRoute = WrappedComponent => connect(mapStateToProps)(
       ? <WrappedComponent auth={ auth } { ...rest } />
       : <Redirect to="/login" />
   ),
-);
-
-export const withLayout = WrappedComponent => (
-  props => (
-    <Layout { ...props }>
-      { layoutProps => <WrappedComponent { ...layoutProps } /> }
-    </Layout>
-  )
 );
 
 export const RouteWithSubRoutes = route => (

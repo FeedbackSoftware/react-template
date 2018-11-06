@@ -1,7 +1,5 @@
 import axios                      from 'axios';
 import { authTypes, authActions } from '../ducks/auth';
-import { transactionsTypes }      from '../ducks/transactions';
-import { statisticsTypes }        from '../ducks/statistics';
 
 const api = ({ dispatch, getState }) => next => (action) => {
   const types = [

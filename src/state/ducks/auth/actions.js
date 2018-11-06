@@ -26,7 +26,6 @@ export default {
   updateProfile,
   signIn,
   showMessage,
-  setLanguage,
   clear,
   logout,
   login,
