@@ -4,29 +4,37 @@ import {
   SignIn, SignUp,
 }                  from '../scenes';
 
-import { Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
-const mapStateToProps = ({ auth: { logged, profile, user } }) => (
-    {
-      logged,
-      profile,
-      user,
-    }
+const mapStateToProps = ({ auth }) => ({
+  auth,
+});
+
+export const privateRoute = WrappedComponent => connect(mapStateToProps)(
+  ({ auth, ...rest }) => (auth.logged === true
+      ? <WrappedComponent auth={ auth } { ...rest } />
+      : <Redirect to="/login" />
+  ),
 );
 
-export const PrivateRoute = WrappedComponent => connect(mapStateToProps)(
-    ({ logged, ...rest }) => logged === true
-                             ? <WrappedComponent { ...rest } />
-                             : <Redirect to="/login" />);
+export const RouteWithSubRoutes = route => (
+  <Route
+    path={ route.path }
+    exact={ route.exact }
+    render={ props => (
+      <route.component { ...props } { ...route } />
+    ) }
+  />
+);
 
 export const NotFound = () => (
-    <Redirect to="/" />
+  <Redirect to="/" />
 );
 
 const routes = [
   {
     path: '/',
-    component: PrivateRoute(SignIn),
+    component: privateRoute(SignIn),
     exact: true,
   }, {
     path: '/login',

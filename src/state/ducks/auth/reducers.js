@@ -1,5 +1,5 @@
 import types            from './types';
-import { initialState } from '../../../index';
+import { initialState } from '../../../App';
 
 const auth = (state = {}, action) => {
   switch (action.type) {
@@ -8,13 +8,25 @@ const auth = (state = {}, action) => {
         ...state, ...initialState.auth,
       };
     }
+    case types.LOGIN: {
+      return {
+        ...state,
+        logged: true,
+      };
+    }
+    case types.LOGOUT: {
+      return {
+        ...state,
+        logged: false,
+      };
+    }
     case types.UPDATE_PROFILE: {
       const { payload } = action;
       return {
         ...state,
         profile: {
           ...state.profile, ...(
-              payload !== null ? payload : {}
+            payload !== null ? payload : {}
           ),
         },
       };
@@ -25,7 +37,7 @@ const auth = (state = {}, action) => {
         ...state,
         user: {
           ...state.user, ...(
-              payload !== null ? payload : {}
+            payload !== null ? payload : {}
           ),
         },
       };

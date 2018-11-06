@@ -4,6 +4,7 @@
   ],
   "parser": "babel-eslint",
   "rules": {
+    "consistent-return": "off",
     "react/button-has-type": "off",
     "camelcase": "off",
     "no-multi-spaces": "off",
