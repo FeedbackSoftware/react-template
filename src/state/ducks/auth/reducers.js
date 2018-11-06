@@ -5,7 +5,19 @@ const auth = (state = {}, action) => {
   switch (action.type) {
     case types.CLEAR: {
       return {
-        ...state, ...initialState.auth
+        ...state, ...initialState.auth,
+      };
+    }
+    case types.LOGIN: {
+      return {
+        ...state,
+        logged: true,
+      };
+    }
+    case types.LOGOUT: {
+      return {
+        ...state,
+        logged: false,
       };
     }
     case types.UPDATE_PROFILE: {
@@ -14,9 +26,9 @@ const auth = (state = {}, action) => {
         ...state,
         profile: {
           ...state.profile, ...(
-              payload !== null ? payload : {}
-          )
-        }
+            payload !== null ? payload : {}
+          ),
+        },
       };
     }
     case types.UPDATE_USER: {
@@ -25,21 +37,21 @@ const auth = (state = {}, action) => {
         ...state,
         user: {
           ...state.user, ...(
-              payload !== null ? payload : {}
-          )
-        }
+            payload !== null ? payload : {}
+          ),
+        },
       };
     }
     case types.START_FETCH: {
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     }
     case types.END_FETCH: {
       return {
         ...state,
-        loading: false
+        loading: false,
       };
     }
     default:

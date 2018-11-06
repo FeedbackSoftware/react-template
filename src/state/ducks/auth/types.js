@@ -7,6 +7,9 @@ const API_CALL = 'auth/API_CALL';
 const CHANGE_LANGUAGE = 'auth/CHANGE_LANGUAGE';
 const MESSAGE = 'auth/MESSAGE';
 const CLEAR = 'auth/CLEAR';
+const LOGIN = 'auth/LOGIN';
+const SIGN_IN = 'auth/SIGN_IN';
+const LOGOUT = 'auth/LOGOUT';
 
 export default {
   START_FETCH,
@@ -17,5 +20,8 @@ export default {
   API_CALL,
   CHANGE_LANGUAGE,
   MESSAGE,
-  CLEAR
+  CLEAR,
+  LOGIN,
+  SIGN_IN,
+  LOGOUT,
 };

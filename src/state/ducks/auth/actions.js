@@ -7,49 +7,17 @@ const endError = createAction(types.END_ERROR);
 const updateProfile = createAction(types.UPDATE_PROFILE);
 const changeLanguage = createAction(types.CHANGE_LANGUAGE);
 const clear = createAction(types.CLEAR);
+const logout = createAction(types.LOGOUT);
+const login = createAction(types.LOGIN);
+const signIn = createAction(types.SIGN_IN);
 
 const showMessage = createAction(types.MESSAGE,
   ({ message }) => ({
-    message
+    message,
   }),
   ({ config }) => ({
-    config
+    config,
   }));
-
-
-const signIn = createAction(types.API_CALL, ({ data }) => (
-    {
-      config: {
-        method: 'POST',
-        url: `login/login-email`,
-        data: { ...data }
-      },
-      authorization: false,
-      onStart: startFetch,
-      onComplete: (dispatch, response) => {
-        if (response.data.status === 'success') {
-          alert('SUCCESS');
-        }
-      },
-      onEnd: endFetch
-    }
-));
-
-const setLanguage = createAction(types.API_CALL, ({ language = 'en' }) => (
-    {
-      config: {
-        method: 'POST',
-        url: `profile/set-language`,
-        data: {
-          language
-        }
-      },
-      authorization: true,
-      onComplete: (dispatch, response) => {
-        dispatch(changeLanguage(language));
-      }
-    }
-));
 
 export default {
   startFetch,
@@ -59,5 +27,7 @@ export default {
   signIn,
   showMessage,
   setLanguage,
-  clear
+  clear,
+  logout,
+  login,
 };
