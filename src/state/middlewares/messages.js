@@ -2,7 +2,7 @@ import { toast }        from 'react-toastify';
 import { authTypes }    from '../ducks/auth';
 import { TOAST_CONFIG } from '../../config/constants';
 
-const endFetch = ({ dispatch }) => (next) => (action) => {
+const endFetch = ({ dispatch }) => next => (action) => {
   next(action);
 
   const types = [authTypes.END_FETCH];
@@ -34,18 +34,17 @@ const endFetch = ({ dispatch }) => (next) => (action) => {
       },
     });
   }
-  ;
 };
 
-const messages = () => (next) => (action) => {
+const messages = () => next => (action) => {
   const types = [authTypes.MESSAGE];
 
   if (!types.includes(action.type)) {
     return next(action);
   }
 
-  const { message } = action.payload;
-  const { config } = action.meta;
+  const { message = 'THERE IS NO MESSAGE' } = action.payload;
+  const { config = TOAST_CONFIG.INFO } = action.meta;
   toast(message, config);
 };
 
