@@ -1,7 +1,6 @@
 import {
   applyMiddleware, combineReducers, compose, createStore,
 }                                          from 'redux';
-import thunk                               from 'redux-thunk';
 import logger                              from 'redux-logger';
 import { routerMiddleware, connectRouter } from 'connected-react-router';
 
@@ -27,8 +26,8 @@ const configureStore = (initialState = {}) => {
     version: STATE_VERSION,
     migrate: (state, version) => {
       state = state && version !== state._persist.version
-              ? initialState
-              : state;
+        ? initialState
+        : state;
       return Promise.resolve(state);
     },
   };
@@ -42,7 +41,7 @@ const configureStore = (initialState = {}) => {
   const history = createHistory();
 
   const routerHistory = routerMiddleware(history);
-  const middlewares = [thunk];
+  const middlewares = [];
 
   if (process.env.NODE_ENV === 'development') {
     middlewares.push(logger);
@@ -51,7 +50,7 @@ const configureStore = (initialState = {}) => {
   middlewares.push(...[routerHistory, ...api, ...messages]);
 
   const store = createStore(connectRouter(history)(persistedReducer),
-      initialState, composeEnhancers(applyMiddleware(...middlewares)));
+    initialState, composeEnhancers(applyMiddleware(...middlewares)));
 
   const persistor = persistStore(store);
 

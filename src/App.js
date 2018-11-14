@@ -1,5 +1,5 @@
 import React                          from 'react';
-import { Route, Switch }              from 'react-router-dom';
+import { Switch }                     from 'react-router-dom';
 import { ConnectedRouter }            from 'connected-react-router';
 import { PersistGate }                from 'redux-persist/integration/react';
 import routes, { RouteWithSubRoutes } from './config/routes';
@@ -19,6 +19,9 @@ export const initialState = {
 const App = () => {
   const { store, persistor, history } = configureStore(initialState);
 
+  // This is useful when state gets corrupted and persisted
+  // persistor.purge();
+
   return (
     <Provider store={ store }>
       <PersistGate
@@ -28,7 +31,9 @@ const App = () => {
         <ConnectedRouter history={ history }>
           <div>
             <Switch>
-              { routes.map(route => <RouteWithSubRoutes key={ route.path } { ...route } />) }
+              { routes.map(
+                route => <RouteWithSubRoutes key={ `${route.path}` } { ...route } />,
+              ) }
             </Switch>
           </div>
         </ConnectedRouter>
