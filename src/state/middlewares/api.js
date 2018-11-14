@@ -24,9 +24,6 @@ const api = ({ dispatch, getState }) => next => (action) => {
     ...preConfig,
     headers: {
       ...preConfig.headers,
-      // In this case we are using a bearer-token-based authentication
-      Authorization: `Bearer ${user.access_token}`,
-    },
       Authorization: `${user.token}`,
     },
   } : preConfig;
