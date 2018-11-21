@@ -3,7 +3,7 @@ import { connect }          from 'react-redux';
 import { Loading }          from '../../../components';
 import { authActions }      from '../../../state/ducks/auth';
 import { NavBar, Footer }   from '../components';
-import './styles.css';
+import './styles.scss';
 import { ToastContainer }   from 'react-toastify';
 import { TOAST_CONFIG }     from '../../../config/constants';
 

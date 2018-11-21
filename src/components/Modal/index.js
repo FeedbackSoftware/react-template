@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css';
+import './styles.scss';
 
 const Modal = ({ children, isActive, handleToggle }) => (
     !isActive ? null : <div className={ `modal is-active` }>

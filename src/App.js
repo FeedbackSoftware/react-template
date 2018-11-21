@@ -2,8 +2,8 @@ import React                          from 'react';
 import { Switch }                     from 'react-router-dom';
 import { ConnectedRouter }            from 'connected-react-router';
 import { PersistGate }                from 'redux-persist/integration/react';
-import routes, { RouteWithSubRoutes } from './config/routes';
 import Provider                       from 'react-redux/es/components/Provider';
+import routes, { RouteWithSubRoutes } from './config/routes';
 import configureStore                 from './state/store';
 
 export const initialState = {
@@ -37,8 +37,8 @@ const App = () => {
             </Switch>
           </div>
         </ConnectedRouter>
-      </ PersistGate>
-    </ Provider>
+      </PersistGate>
+    </Provider>
   );
 };
 
