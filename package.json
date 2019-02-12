@@ -4,14 +4,14 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
-    "bulma": "^0.7.1",
+    "bulma": "^0.7.4",
     "connected-react-router": "^4.5.0",
     "font-awesome": "^4.7.0",
     "formik": "^1.5.0",
     "history": "^4.7.2",
     "i18next": "^11.9.0",
     "i18next-browser-languagedetector": "^2.2.3",
-    "node-sass": "^4.10.0",
+    "node-sass": "^4.11.0",
     "react": "^16.6.3",
     "react-dom": "^16.5.2",
     "react-i18next": "^8.0.7",
@@ -42,9 +42,9 @@
   ],
   "devDependencies": {
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
     "react-test-renderer": "^16.5.2",
     "redux-mock-store": "^1.5.3"
   }
