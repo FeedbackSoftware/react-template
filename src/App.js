@@ -2,7 +2,7 @@ import React                          from 'react';
 import { Switch }                     from 'react-router-dom';
 import { ConnectedRouter }            from 'connected-react-router';
 import { PersistGate }                from 'redux-persist/integration/react';
-import Provider                       from 'react-redux/es/components/Provider';
+import { Provider }                   from 'react-redux';
 import routes, { RouteWithSubRoutes } from './config/routes';
 import configureStore                 from './state/store';
 

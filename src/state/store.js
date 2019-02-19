@@ -32,14 +32,13 @@ const configureStore = (initialState = {}) => {
     },
   };
 
+  const history = createHistory();
   const rootReducer = combineReducers({
+    router: connectRouter(history),
     ...reducers,
   });
 
   const persistedReducer = persistReducer(rootPersistConfig, rootReducer);
-
-  const history = createHistory();
-
   const routerHistory = routerMiddleware(history);
   const middlewares = [];
 
