@@ -24,6 +24,7 @@ export default {
   endFetch,
   endError,
   updateProfile,
+  changeLanguage,
   signIn,
   showMessage,
   clear,
