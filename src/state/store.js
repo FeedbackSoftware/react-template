@@ -13,7 +13,7 @@ import {
   api, messages,
 }                        from './middlewares';
 import { STATE_VERSION } from '../config/constants';
-import createHistory     from 'history/createBrowserHistory';
+import { createBrowserHistory } from 'history'
 import configurei18n     from '../i18n';
 
 const configureStore = (initialState = {}) => {
@@ -32,7 +32,7 @@ const configureStore = (initialState = {}) => {
     },
   };
 
-  const history = createHistory();
+  const history = createBrowserHistory();
   const rootReducer = combineReducers({
     router: connectRouter(history),
     ...reducers,
@@ -46,7 +46,7 @@ const configureStore = (initialState = {}) => {
     middlewares.push(logger);
   }
 
-  middlewares.push(...[routerHistory, ...api, ...messages]);
+  middlewares.push(...[routerHistory, ...auth, ...api, ...messages]);
 
   const store = createStore(connectRouter(history)(persistedReducer),
     initialState, composeEnhancers(applyMiddleware(...middlewares)));
