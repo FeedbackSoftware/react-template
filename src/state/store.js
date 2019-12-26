@@ -6,15 +6,15 @@ import { routerMiddleware, connectRouter } from 'connected-react-router';
 
 import {
   persistReducer, persistStore,
-}                        from 'redux-persist';
-import storage           from 'redux-persist/lib/storage';
-import * as reducers     from './ducks';
+}                               from 'redux-persist';
+import storage                  from 'redux-persist/lib/storage';
+import * as reducers            from './ducks';
 import {
-  api, messages,
-}                        from './middlewares';
-import { STATE_VERSION } from '../config/constants';
-import { createBrowserHistory } from 'history'
-import configurei18n     from '../i18n';
+  api, messages, auth,
+}                               from './middlewares';
+import { STATE_VERSION }        from '../config/constants';
+import { createBrowserHistory } from 'history';
+import configurei18n            from '../i18n';
 
 const configureStore = (initialState = {}) => {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
