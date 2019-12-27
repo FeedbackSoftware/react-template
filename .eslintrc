@@ -12,6 +12,8 @@
     "camelcase": "off",
     "no-multi-spaces": "off",
     "react/jsx-curly-spacing": "off",
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "react/jsx-props-no-spreading": "off",
+    "import/no-cycle": "off"
   }
 }
