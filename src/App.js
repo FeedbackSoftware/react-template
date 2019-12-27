@@ -32,7 +32,7 @@ const App = () => {
           <div>
             <Switch>
               { routes.map(
-                route => <RouteWithSubRoutes key={ `${route.path}` } { ...route } />,
+                (route) => <RouteWithSubRoutes key={ `${route.path}` } { ...route } />,
               ) }
             </Switch>
           </div>

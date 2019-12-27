@@ -8,12 +8,12 @@ import {
   persistReducer, persistStore,
 }                               from 'redux-persist';
 import storage                  from 'redux-persist/lib/storage';
+import { createBrowserHistory } from 'history';
 import * as reducers            from './ducks';
 import {
   api, messages, auth,
 }                               from './middlewares';
 import { STATE_VERSION }        from '../config/constants';
-import { createBrowserHistory } from 'history';
 import configurei18n            from '../i18n';
 
 const configureStore = (initialState = {}) => {
@@ -25,6 +25,7 @@ const configureStore = (initialState = {}) => {
     storage,
     version: STATE_VERSION,
     migrate: (state, version) => {
+      // eslint-disable-next-line no-param-reassign
       state = state && version !== state._persist.version
         ? initialState
         : state;
