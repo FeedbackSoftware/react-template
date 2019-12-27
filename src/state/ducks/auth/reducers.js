@@ -25,7 +25,8 @@ const auth = (state = {}, action) => {
       return {
         ...state,
         profile: {
-          ...state.profile, ...(
+          ...state.profile,
+          ...(
             payload !== null ? payload : {}
           ),
         },
@@ -36,7 +37,8 @@ const auth = (state = {}, action) => {
       return {
         ...state,
         user: {
-          ...state.user, ...(
+          ...state.user,
+          ...(
             payload !== null ? payload : {}
           ),
         },

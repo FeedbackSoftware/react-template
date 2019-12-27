@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import {
   applyMiddleware, combineReducers, compose, createStore,
 }                                          from 'redux';
