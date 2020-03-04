@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 import { FormikExample, Loading } from '../../../components';
 import { authActions } from '../../../state/ducks/auth';
 import { NavBar, Footer } from '../components';
@@ -20,6 +21,8 @@ function SignUp() {
    */
   const { showMessage } = authActions; // Accion a ejecutar
 
+  const { t } = useTranslation(); // Hook de traducción para uso de la función t('traducción')
+
   return (
     <div className='SignUp'>
       <ToastContainer />
@@ -37,10 +40,9 @@ function SignUp() {
                 <FormikExample />
               </div>
               <div className='column is-6 is-offset-1'>
-                <h1 className='title is-2'>The technological world</h1>
+                <h1 className='title is-2'>{t('signUpTitle')}</h1>
                 <h2 className='subtitle is-4'>
-                  A world connected by internet, requires people prepared to do
-                  it.
+                  {t('signUpSubtitle')}
                 </h2>
                 <br />
                 <p className='has-text-centered'>
