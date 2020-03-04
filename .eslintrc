@@ -1,7 +1,5 @@
 {
-  "extends": [
-    "airbnb"
-  ],
+  "extends": ["airbnb"],
   "env": {
     "browser": true
   },
@@ -14,6 +12,7 @@
     "react/jsx-curly-spacing": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-props-no-spreading": "off",
-    "import/no-cycle": "off"
+    "import/no-cycle": "off",
+    "jsx-quotes": "off",
   }
 }
