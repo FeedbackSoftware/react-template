@@ -28,19 +28,20 @@ const configureStore = (initialState = {}) => {
     migrate: (state, version) => {
       // eslint-disable-next-line no-param-reassign
       state = state && version !== state._persist.version
-        ? initialState
-        : state;
+              ? initialState
+              : state;
       return Promise.resolve(state);
     },
   };
 
-  const history = createBrowserHistory();
-  const rootReducer = combineReducers({
+  const rootReducer = (history) => combineReducers({
     router: connectRouter(history),
     ...reducers,
   });
+  const history = createBrowserHistory();
 
-  const persistedReducer = persistReducer(rootPersistConfig, rootReducer);
+  const persistedReducer = persistReducer(rootPersistConfig,
+      rootReducer(history));
   const routerHistory = routerMiddleware(history);
   const middlewares = [];
 
